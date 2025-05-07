@@ -10,14 +10,14 @@ from groq import Groq
 import traceback
 
 class AICommandExecutor:
-    def __init__(self, api_key="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", model="qwen-2.5-coder-32b", max_retries=5):
+    def __init__(self, api_key="", model="qwen-2.5-coder-32b", max_retries=5):
         self.api_key = api_key
         self.model = model
         self.max_retries = max_retries
         self.executed_scripts = {}
         self.script_counter = 1
         # self.client = genai.Client(api_key=self.api_key)
-        self.client = Groq(api_key="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")
+        self.client = Groq(api_key="")
     def extract_code_blocks(self, response_text):
         """Extract bash and python code blocks from the response text."""
         # Extract bash commands
